@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>ClassNotFoundExceptionExample.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ClassNotFoundExceptionExample.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">ClassNotFoundExceptionExample </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s3">// Name of the class we are trying to load</span>
+        <span class="s1">String className </span><span class="s2">= </span><span class="s4">&quot;com.example.NonExistentClass&quot;</span><span class="s2">; </span><span class="s3">// This class does not exist</span>
+
+        <span class="s0">try </span><span class="s2">{</span>
+            <span class="s3">// Attempt to load the class using Class.forName()</span>
+            <span class="s1">Class</span><span class="s2">&lt;?&gt; </span><span class="s1">clazz </span><span class="s2">= </span><span class="s1">Class</span><span class="s2">.</span><span class="s1">forName</span><span class="s2">(</span><span class="s1">className</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Class loaded: &quot; </span><span class="s2">+ </span><span class="s1">clazz</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">());</span>
+        <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">ClassNotFoundException e</span><span class="s2">) {</span>
+            <span class="s3">// Handle the ClassNotFoundException</span>
+            <span class="s3">// This block will be executed if the class cannot be found</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">err</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;ClassNotFoundException occurred: &quot; </span><span class="s2">+ </span><span class="s1">e</span><span class="s2">.</span><span class="s1">getMessage</span><span class="s2">());</span>
+        <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">Exception e</span><span class="s2">) {</span>
+            <span class="s3">// Handle any other exceptions that may occur</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">err</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;An unexpected error occurred: &quot; </span><span class="s2">+ </span><span class="s1">e</span><span class="s2">.</span><span class="s1">getMessage</span><span class="s2">());</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
